@@ -1,4 +1,4 @@
-angular.module('TodoApp', ['ngRoute', 'RouteControllers', 'UserService', 'angular-storage', 'todoservice']);
+angular.module('TodoApp', ['ngRoute', 'RouteControllers', 'UserService', 'angular-storage', 'todoservice', 'TodoDirective']);
  
 angular.module('TodoApp').config(function($locationProvider, $routeProvider) {
     $locationProvider.html5Mode(true); 
@@ -9,6 +9,14 @@ angular.module('TodoApp').config(function($locationProvider, $routeProvider) {
     .when('/accounts/register', {
         templateUrl: 'templates/register.html',
         controller: 'RegisterController'
+    }) 
+    .when('/accounts/login', {
+        templateUrl: 'templates/login.html',
+        controller: 'LoginController'
+    })
+    .when('/accounts/logout', {
+        templateUrl: 'templates/logout.html',
+        controller: 'LogoutController'
     })
      .when('/todo', {
         templateUrl: 'templates/todo.html',
